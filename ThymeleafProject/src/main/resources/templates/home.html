@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body class="bg-light">
+	<div
+		class="container d-flex justify-content-center align-items-center vh-100">
+		<div class="card shadow-lg p-4 col-md-5">
+			<h2 class="text-center mb-4">Welcome!</h2>
+			<div class="d-flex flex-column gap-3 mt-3">
+				<div
+					th:if="${param.success} and ${successMessage} != null and !${#strings.isEmpty(successMessage)}"
+					class="alert alert-success dispearMsg" data-dispear-time="2000"
+					id="successMsg">
+					<span th:text="${successMessage}">User created successfully!</span>
+				</div>
+				<form th:action="@{/userinfo}" method="get">
+					<button class="btn btn-primary w-100" type="submit">User
+						Info</button>
+				</form>
+				<form th:action="@{/usercreate}" method="get">
+					<button class="btn btn-success w-100" type="submit">Create
+						User</button>
+				</form>
+				<form th:action="@{/logout}" method="post">
+					<button class="btn btn-danger w-100" type="submit">Logout</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="/js/dispearMsg.js"></script>
+</body>
+</html>
