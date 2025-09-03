@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.pappucoder.in.model.UserEntity;
 import com.pappucoder.in.repository.UserRepository;
 
+
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
 	

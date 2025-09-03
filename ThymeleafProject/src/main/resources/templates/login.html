@@ -16,6 +16,12 @@
 
 			<form th:action="@{/login}" method="post" class="needs-validation"
 				novalidate>
+				<div
+					th:if="${successMessage != null}"
+					class="alert alert-success dispearMsg" data-dispear-time="2000"
+					id="successMsg">
+					<span th:text="${successMessage}">User created successfully!</span>
+				</div>
 				<div th:if="${param.error != null}" class="alert alert-danger dispearMsg"
 					data-dispear-time="2000" id="errorMsg">
 					<span th:text="${param.error != null ? 'Invalid username or
@@ -39,6 +45,12 @@
 				</div>
 				<button type="submit" class="btn btn-primary w-100">Login</button>
 			</form>
+			<div class="text-center">
+				<a th:href="@{/usercreate}" class="link-primary">Create User</a>
+			</div>
+			<div class="text-center">
+				<a th:href="@{/forgot-password}" class="link-primary">Forgot Password?</a>
+			</div>
 		</div>
 	</div>
 	<script

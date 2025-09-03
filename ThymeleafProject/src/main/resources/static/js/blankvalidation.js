@@ -1,5 +1,3 @@
-console.log("Validation script loaded");
-// Bootstrap custom validation
 (() => {
     'use strict';
     const forms = document.querySelectorAll('.needs-validation');
